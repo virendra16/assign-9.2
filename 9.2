@@ -1,0 +1,35 @@
+Task 1 Explain the working of following commands 
+
+1) LOAD
+it Loads data from the file system  into a relation.
+a = load '/hadoopdata/pig/A.txt' using PigStorage(',') as (a1:int, a2:int, a3:int);
+
+2) STORE
+it saves a relation to the file system.
+STORE l INTO '/pigoutput';
+
+3) DUMP
+it prints the contents of a relation on the console.
+Dump a ;
+
+4) FOREACH
+it generates data transformations based on columns of data.
+l = FOREACH c GENERATE a1, a2, a2*a3;
+
+5) FILTER
+it removes unwanted rows from a relation.
+f = FILTER c by $1 > 3;
+
+6) GROUP BY 
+it groups the data in a single relation.
+g = GROUP c by $2;
+g = GROUP c by ($0,$1); 
+h = GROUP c ALL;
+
+7) ORDER BY 
+it arranges a relation in a sorted order based on one or more fields (ascending or descending).
+f = order c by a1 desc ;
+
+8) DESCRIBE
+it describes the schema of a relation.
+describe f;
